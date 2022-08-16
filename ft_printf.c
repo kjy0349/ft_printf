@@ -6,7 +6,7 @@
 /*   By: jeykim <jeykim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/14 15:31:37 by jeyoung           #+#    #+#             */
-/*   Updated: 2022/08/16 16:47:54 by jeykim           ###   ########.fr       */
+/*   Updated: 2022/08/16 18:04:37 by jeykim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	print_nbr(long elem, int *size)
 	char	num;
 
 	if (elem >= 10)
-		print_nbr(elem % 10, size);
+		print_nbr(elem / 10, size);
 	num = (elem % 10) + '0';
 	write(1, &num, 1);
 	*size++;
@@ -86,7 +86,7 @@ void	print_hexnbr(long elem, int *size, int up)
 	char	num;
 
 	if (elem >= 16)
-		print_hexnbr(elem % 16, size, up);
+		print_hexnbr(elem / 16, size, up);
 	if (elem >= 10)
 	{
 		elem -= 10;
@@ -160,13 +160,15 @@ int	ft_printf(const char *format, ...)
 	while (format[++idx])
 	{
 		if (format[idx] == '%')
-			idx = branch_args(format, idx, ap);
+		{
+			branch_args(format, idx, ap);
+			idx++;
+		}
 		else
 			len += write(1, &format[idx], 1);
-		va_arg(ap, char);
-		format++;
 	}
 	va_end(ap);
+	return (len);
 }
 
 #include <stdio.h>
