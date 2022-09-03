@@ -6,7 +6,7 @@
 /*   By: jeykim <jeykim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 13:17:20 by jeykim            #+#    #+#             */
-/*   Updated: 2022/09/02 16:07:53 by jeykim           ###   ########.fr       */
+/*   Updated: 2022/09/03 13:20:05 by jeykim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	print_udec(va_list ap)
 	int				size;
 
 	elem = va_arg(ap, unsigned int);
-	size = print_nbr(elem, 0);
+	size = print_unbr(elem, 0);
 	return (size + 1);
 }
 

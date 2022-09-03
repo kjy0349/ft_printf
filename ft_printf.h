@@ -6,7 +6,7 @@
 /*   By: jeykim <jeykim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/14 15:33:04 by jeyoung           #+#    #+#             */
-/*   Updated: 2022/09/01 15:43:27 by jeykim           ###   ########.fr       */
+/*   Updated: 2022/09/03 12:56:29 by jeykim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,6 @@ int		print_char(va_list ap);
 int		print_str(va_list ap);
 int		print_nbr(long elem, int size);
 int		print_dec(va_list ap);
+int		print_unbr(unsigned int elem, int size);
 
 #endif

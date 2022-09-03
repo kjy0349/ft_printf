@@ -6,7 +6,7 @@
 /*   By: jeykim <jeykim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/14 15:31:37 by jeyoung           #+#    #+#             */
-/*   Updated: 2022/09/02 12:08:19 by jeykim           ###   ########.fr       */
+/*   Updated: 2022/09/03 13:23:18 by jeykim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int	branch_args(const char *format, int idx, va_list ap)
 		new_idx = print_hex(ap, 0);
 	else if (elem == 'X')
 		new_idx = print_hex(ap, 1);
-	else
+	else if (elem == '%')
 		new_idx = print_per();
 	return (new_idx);
 }
