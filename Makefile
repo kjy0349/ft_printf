@@ -28,7 +28,7 @@ ${NAME} : ${OBJECT}
 all : ${NAME}
 
 clean :
-	rm -f ${OBJECT} ${OBJECT_BONUS}
+	rm -f ${OBJECT}
 
 fclean : clean
 	rm -f ${NAME}
